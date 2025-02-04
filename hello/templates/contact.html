@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Contact{% endblock title %}
+{% block body %}
+<div class="container-fluid px-0">
+    <img src="https://imgs.search.brave.com/Me3qtPcpYRq9drnYiGoWb6GXRM9_xuvOwjLMpeqDJkg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9idXJz/dC5zaG9waWZ5Y2Ru/LmNvbS9waG90b3Mv/Y29udGFjdC11cy1p/bWFnZS5qcGc_d2lk/dGg9MTAwMCZmb3Jt/YXQ9cGpwZyZleGlm/PTAmaXB0Yz0w"
+        class="d-block w-100" alt="..." style="
+    height: 400px;">
+    <h1 class="text-center my-3">Contact Us</h1>
+</div>
+<div class="container my-2 py-2">
+    <form method="post" action="/contact">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Name</label>
+            <input type="text" class="form-control" id="name" name ="name" placeholder="Enter your Name">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email"  name="email" placeholder="Enter Your Email">
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number">
+        </div>
+        <!-- <div class="form-group">
+            <label for="exampleFormControlSelect1">Example select</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div> -->
+        <!-- <div class="form-group">
+            <label for="exampleFormControlSelect2">Example multiple select</label>
+            <select multiple class="form-control" id="exampleFormControlSelect2">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div> -->
+        <div class="form-group">
+            <label for="desc">How Can We Help You</label>
+            <textarea class="form-control" id="decs" name="desc" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary my-2 text-center">Submit</button>
+    </form>
+</div>
+{% endblock body %}
